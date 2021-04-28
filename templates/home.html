@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+<body>
+<center><h1><font color="white">Insurance Prediction</h1></center>
+<h2>     </h2>
+
+<div align="center" style="margin-right: 30%;
+    margin-left: 30%;">
+
+  <form method="POST">
+  <form action="/action_page.php">
+    <label for="Age"></label>
+    <input type="number" id="age" name="age" placeholder="Age (between 40 to 80)" min="40" max="80" step="1" required size="35">
+    <label for="Sex">
+        <select name="sex">
+        <option value="2" disabled selected>What is patient's gender?</option>
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+        </select>
+    </label>
+
+{#    <label for="Chest Pain Type"></label>#}
+{#    <input type="number" id="cp" name="cp" placeholder="chest pain type (1 to 3)" min="1" max="3" required>#}
+
+    <label for="cp">
+        <select name="cp">
+        <option value="5" disabled selected>What is the chest pain type?</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        </select>
+    </label>
+
+    <label for="Resting blood pressure"></label>
+    <input type="number" id="trestbps" name="trestbps" placeholder="Resting blood pressure Hg (between 90 or 200)" min="90" max="200" step="1" required size="35">
+
+{#    <label for="serum cholestoral"></label>#}
+{#    <input type="number" id="chol" name="chol" placeholder="serum cholestoral mg/dl (between 90 or 150)" min="90" max="150" step="1" required size="35">#}
+
+    <label for="fasting blood sugar">
+        <select name="fbs">
+        <option value="2" disabled selected>Is fasting blood sugar > 120 mg/dl?</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+        </select>
+    </label>
+
+    <select name="req_model">
+    <option value="Logistic">Logistic Regression</option>
+  </select>
+
+
+    <input type="submit" value="Predict">
+  </form>
+</form>
+
+<form method="GET">
+    <center><h2><font color="Black"> Patient Category is {{ target}}</h2></center>
+    <center><h2><font color="Black"> {{ type }}</h2></center>
+</form>
+
+
+</div>
+
+
+</body>
+</html>
